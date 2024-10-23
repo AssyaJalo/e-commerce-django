@@ -1,0 +1,30 @@
+{% extends "navbar.html" %}
+
+{% block contenu %}
+<div class="container my-5">
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <img src="https://i.pinimg.com/564x/03/3d/69/033d69bb5fadb4d227381bbfa23a7376.jpg" alt="A propos image" class="img-fluid rounded" width="350px">
+        </div>
+        <div class="col-md-6">
+            <h2>À propos de nous</h2>
+            <p>
+                Bienvenue sur le site Muslin_Hijab perfect !
+            </p>
+            <p>
+                Nous sommes une entreprise engagée à valoriser les femmes voilées en leur offrant des produits et services qui répondent à leurs besoins spécifiques.
+                Notre mission est de fournir des solutions de qualité tout en respectant les valeurs et les convictions de nos clients.
+                 Nous nous efforçons de garantir un service exceptionnel et de maintenir les plus hauts standards de satisfaction client,
+                  tout en promouvant l'inclusion et le respect de la diversité.
+            </p>
+            <p>
+                Nous nous engageons à vous offrir la meilleure expérience possible. Apprenez-en plus sur nous ici.
+            </p>
+            <a href="{% url 'accueil' %}" class="btn btn-outline-info">Click ici</a>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

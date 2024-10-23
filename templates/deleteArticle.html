@@ -1,0 +1,27 @@
+{% extends "navbar.html" %}
+
+{% block contenu %}
+
+<div class="background-container d-flex justify-content-center align-items-center min-vh-100 mt-3">
+    <div class="card p-4" style="max-width: 600px; width: 100%;">
+        <div class="card-body">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                {% if error_message %}
+                    <div class="alert alert-danger">{{ error_message }}</div>
+                {% endif %}
+
+
+                <div class="alert alert-danger" role="alert">
+                    Voulez-vous supprimer cette article " {{article.Title}}  "
+                  </div>
+                <button type="submit" class="btn btn-outline-danger">oui</button>
+                <a href="{% url 'useradmin' %}" class="btn btn-outline-info">non</a>
+            
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

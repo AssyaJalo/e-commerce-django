@@ -1,0 +1,43 @@
+{% extends "navbar.html" %}
+
+{% block contenu %}
+
+<div class="background-container d-flex justify-content-center align-items-center min-vh-100 mt-3">
+    <div class="card p-4" style="max-width: 600px; width: 100%;">
+        <div class="card-body">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                {% if error_message %}
+                    <div class="alert alert-danger">{{ error_message }}</div>
+                {% endif %}
+
+                <div class="mb-3">
+                    <label class="form-label">Title:</label>
+                    <input type="text" class="form-control" name="Title" value={{ article.Title}} required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Content:</label>
+                    <textarea class="form-control" name="Content" required>{{ article.Content }}</textarea>
+                </div>
+                
+
+                <div class="mb-3">
+                    <label class="form-label">Image:</label>
+                    <input type="file" class="form-control" name="image" value={{ article.image}} >
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Prix:</label>
+                    <input type="number" class="form-control" name="prix" step="0.01"  value={{ article.prix}} required>
+                </div>
+
+                <button type="submit" class="btn btn-outline-success me-3">Enregistrer</button>
+                <a href="{% url 'accueil' %}" class="btn btn-outline-danger">Annuler</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
